@@ -1,0 +1,86 @@
+# Newsletter Generator - Git Ignore
+# =================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Logs and temporary files
+logs/
+*.log
+newsletter_*.log
+batch_sender.log
+
+# Output files (generated newsletters)
+output/*.eml
+output/*.html
+output/*.txt
+sample_newsletter.eml
+
+# Backup files
+backups/*.txt
+backups/*.bak
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Email campaign data (optional - uncomment if you don't want to track)
+# mails.txt
+# email_list.csv
+
+# SMTP credentials and secrets
+config_production.py
+secrets.py
+credentials.json
+
+# Test files
+test_*.eml
+test_newsletter_*.html
+installation_test.eml
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
