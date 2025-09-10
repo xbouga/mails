@@ -1,0 +1,55 @@
+ADAC NEWSLETTER
+===============
+Ihr Mitgliedermagazin
+
+Willkommen zu Ihrem ADAC Newsletter
+-----------------------------------
+
+Liebe ADAC Mitglieder,
+
+herzlich willkommen zu unserem aktuellen Newsletter. Hier finden Sie die 
+neuesten Informationen rund um Mobilität, Reisen und Ihre Mitgliedschaft 
+beim ADAC.
+
+Aktuelle Nachrichten
+--------------------
+
+Bleiben Sie informiert über die wichtigsten Entwicklungen im Bereich 
+Verkehr und Mobilität. Unsere Experten haben für Sie die relevantesten 
+Themen zusammengestellt.
+
+Mehr erfahren: [LINK_URL]
+
+Ihre ADAC Services
+------------------
+
+Nutzen Sie die vielfältigen Vorteile Ihrer ADAC Mitgliedschaft:
+
+• 24h Pannenhilfe
+• Reiseplanung und -beratung
+• Vergünstigungen bei Partnern
+• Rechtshilfe im Verkehrsbereich
+
+Kontakt
+-------
+
+Bei Fragen stehen wir Ihnen gerne zur Verfügung:
+
+ADAC Kundenservice
+Telefon: 089 76 76 76
+E-Mail: service@adac.de
+
+---
+
+ADAC e.V.
+Am Westpark 8
+81373 München
+
+Diese E-Mail wurde an {{EMAIL_ADDRESS}} gesendet.
+Sie erhalten diese E-Mail, da Sie ADAC Mitglied sind.
+
+Newsletter abbestellen: {{UNSUBSCRIBE_URL}}
+E-Mail Einstellungen ändern: {{PREFERENCES_URL}}
+Datenschutz: {{PRIVACY_URL}}
+
+© 2024 ADAC e.V. Alle Rechte vorbehalten.
