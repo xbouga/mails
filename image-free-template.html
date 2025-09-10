@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter - Image-Free Version</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #2c3e50;
+            padding: 20px;
+            text-align: center;
+        }
+        /* CSS-based logo using text styling */
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 15px 0;
+            border: 3px solid #ffffff;
+            border-radius: 8px;
+            display: inline-block;
+            padding: 15px 30px;
+        }
+        .content {
+            padding: 30px;
+        }
+        /* CSS-based hero banner using gradients */
+        .hero-banner {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            border-radius: 0;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-banner h1 {
+            margin: 0;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-banner p {
+            margin: 10px 0;
+            font-size: 18px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .product-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .product-item {
+            display: table-cell;
+            width: 50%;
+            padding: 10px;
+            vertical-align: top;
+        }
+        /* CSS-based product placeholder using colors and shapes */
+        .product-placeholder {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-1 {
+            background: linear-gradient(45deg, #e67e22 0%, #d35400 100%);
+        }
+        .product-2 {
+            background: linear-gradient(45deg, #9b59b6 0%, #8e44ad 100%);
+        }
+        /* Add subtle pattern effect */
+        .product-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.2) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 30px 30px, 40px 40px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        /* CSS decorative divider instead of image */
+        .decorative-divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .decorative-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #bdc3c7 20%, #ecf0f1 50%, #bdc3c7 80%, transparent 100%);
+        }
+        .decorative-divider::after {
+            content: '✦';
+            background: white;
+            color: #bdc3c7;
+            padding: 0 15px;
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        /* CSS-based newsletter section with gradient background */
+        .newsletter-section {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .newsletter-section h2 {
+            margin: 0 0 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter-section p {
+            margin: 0 0 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter-cta {
+            background: linear-gradient(45deg, #27ae60 0%, #229954 100%);
+            position: relative;
+            z-index: 1;
+        }
+        /* CSS-based testimonial with avatar using initials */
+        .testimonial {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .testimonial-content {
+            display: table;
+            width: 100%;
+        }
+        .testimonial-avatar {
+            display: table-cell;
+            width: 80px;
+            vertical-align: top;
+        }
+        .avatar-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .testimonial-text {
+            display: table-cell;
+            vertical-align: top;
+            padding-left: 15px;
+        }
+        .testimonial-text p {
+            margin: 0;
+        }
+        .testimonial-text .quote {
+            font-style: italic;
+            position: relative;
+        }
+        .testimonial-text .quote::before {
+            content: '"';
+            font-size: 24px;
+            color: #3498db;
+            position: absolute;
+            left: -15px;
+            top: -5px;
+        }
+        .testimonial-text .quote::after {
+            content: '"';
+            font-size: 24px;
+            color: #3498db;
+        }
+        .testimonial-text .author {
+            margin: 10px 0 0 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .footer {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* CSS-based social media icons using Unicode symbols */
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            line-height: 40px;
+            margin: 0 8px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .facebook { background: linear-gradient(135deg, #3b5998 0%, #2d4373 100%); }
+        .twitter { background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%); }
+        .instagram { background: linear-gradient(135deg, #e4405f 0%, #833ab4 100%); }
+        .linkedin { background: linear-gradient(135deg, #0077b5 0%, #005a86 100%); }
+        
+        /* Mobile responsiveness */
+        @media screen and (max-width: 600px) {
+            .product-item {
+                display: block !important;
+                width: 100% !important;
+            }
+            .hero-banner {
+                padding: 40px 15px;
+            }
+            .hero-banner h1 {
+                font-size: 24px;
+            }
+            .newsletter-section {
+                padding: 30px 20px;
+            }
+            .testimonial-content {
+                display: block;
+            }
+            .testimonial-avatar {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            .testimonial-text {
+                display: block;
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with CSS-based logo -->
+        <div class="header">
+            <h1 class="logo">Company Logo</h1>
+        </div>
+
+        <!-- Hero section with CSS gradient background -->
+        <div class="hero-banner">
+            <h1>Summer Sale</h1>
+            <p>Up to 50% Off Everything!</p>
+        </div>
+
+        <!-- Content section -->
+        <div class="content">
+            <h2>Featured Products</h2>
+            
+            <!-- Product grid with CSS-based product placeholders -->
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-placeholder product-1">
+                        <span>Premium<br>Headphones</span>
+                    </div>
+                    <h3>Premium Headphones</h3>
+                    <p style="color: #e74c3c; font-weight: bold; font-size: 18px;">$99.99</p>
+                    <p>High-quality wireless headphones with noise cancellation.</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-placeholder product-2">
+                        <span>Smart<br>Watch</span>
+                    </div>
+                    <h3>Smart Watch</h3>
+                    <p style="color: #e74c3c; font-weight: bold; font-size: 18px;">$199.99</p>
+                    <p>Track your fitness and stay connected on the go.</p>
+                </div>
+            </div>
+
+            <!-- CSS decorative divider -->
+            <div class="decorative-divider"></div>
+
+            <!-- Newsletter signup with CSS gradient background -->
+            <div class="newsletter-section">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get exclusive deals and updates!</p>
+                <a href="#" class="cta-button newsletter-cta">Subscribe Now</a>
+            </div>
+
+            <!-- Testimonial with CSS-based user avatar -->
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle">SJ</div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="quote">Amazing products and excellent customer service! 
+                           I highly recommend this store.</p>
+                        <p class="author">- Sarah Johnson</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer with CSS-based social media icons -->
+        <div class="footer">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#" class="social-icon facebook">f</a>
+                <a href="#" class="social-icon twitter">𝕏</a>
+                <a href="#" class="social-icon instagram">📷</a>
+                <a href="#" class="social-icon linkedin">in</a>
+            </div>
+            <p>© 2024 Company Name. All rights reserved.</p>
+            <p>123 Business Street, City, State 12345</p>
+        </div>
+    </div>
+</body>
+</html>
