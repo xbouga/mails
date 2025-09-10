@@ -77,15 +77,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "kundenservice@auto-premium-mail.de"
+    sender_email = "kontakt@mail-info.de"
     sender_name = "𝗔𝗗𝗔𝗖"
-    subject = "Nur für kurze Zeit: Gratis Auto-Notfallset erhältlich"
+    subject = "Limitierte Aktion: Ihr Auto-Notfallset kostenlos"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "kundenservice@auto-premium-mail.de"
+    to_email = "kontakt@mail-info.de"
 
     # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
