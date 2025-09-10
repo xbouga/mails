@@ -37,7 +37,8 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
             msg.attach(MIMEText(message, 'html'))
 
             server.sendmail(sender_email, batch, msg.as_string())
-            print(f"Batch of {len(batch)} emails successfully sent.")
+            print("Batch of {} emails successfully sent.".format(len(batch)))
+
 
             server.quit()
         except Exception as e:
