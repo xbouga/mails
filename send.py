@@ -79,7 +79,7 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
 if __name__ == "__main__":
     sender_email = "kundenservice@auto-premium-mail.de"
     sender_name = "𝗔𝗗𝗔𝗖"
-    subject = "Hol dir dein Auto-Notfallset — Exklusiv für Mitglieder · Schnell sichern"
+    subject = "Nur für kurze Zeit: Gratis Auto-Notfallset erhältlich"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
