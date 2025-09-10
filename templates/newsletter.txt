@@ -1,0 +1,11 @@
+{{ company_name }} Newsletter
+{{ "=" * (company_name|length + 11) }}
+
+{% for section in content_sections %}
+{{ section }}
+
+{% endfor %}
+
+Thank you for subscribing to our newsletter!
+
+To unsubscribe, visit: {{ unsubscribe_url }}
