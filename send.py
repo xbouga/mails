@@ -47,7 +47,8 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
 
 def prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email):
     domain = recipient_emails[0].split('@')[1]
-    mx_records = dns.resolver.resolve(domain, 'MX')
+    # Use dns.resolver.query() for dnspython 1.x compatibility
+    mx_records = dns.resolver.query(domain, 'MX')
     mx_record = sorted(mx_records, key=lambda rec: rec.preference)[0]
     mx_server = str(mx_record.exchange).strip('.')
 
