@@ -8,12 +8,12 @@ import queue
 import socks
 import socket
 
-NUM_THREADS = 150  # Number of threads
-BATCH_SIZE = 200   # Emails per batch
+NUM_THREADS = 150  # Fixer le nombre de threads à 100
+BATCH_SIZE = 200    # Chaque batch contient 50 emails
 
-# Optional: SOCKS5 proxy
-# socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 30003)
-# socket.socket = socks.socksocket
+# Définir SOCKS5 comme proxy
+#socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 30003)
+#socket.socket = socks.socksocket  # Remplacer le socket par celui qui passe par le proxy
 
 def read_html_file(file_path):
     with open(file_path, "r", encoding="utf-8") as html_file:
@@ -24,7 +24,7 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
     while True:
         batch = q.get()
         if batch is None:
-            break  # Stop thread when None is received
+            break  # Arrêter le thread quand on reçoit "None"
 
         try:
             server = smtplib.SMTP(mx_server)
@@ -37,43 +37,39 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
             msg.attach(MIMEText(message, 'html'))
 
             server.sendmail(sender_email, batch, msg.as_string())
-            print("Batch of {} emails successfully sent.".format(len(batch)))
+            print(f"Batch of {len(batch)} emails successfully sent.")
 
             server.quit()
         except Exception as e:
-            print("Failed to send email batch: {}".format(e))
+            print(f"Failed to send email batch: {e}")
         finally:
             q.task_done()
 
 def prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email):
     domain = recipient_emails[0].split('@')[1]
-    # Use dns.resolver.query() for dnspython 1.x compatibility
-    mx_records = dns.resolver.query(domain, 'MX')
+    mx_records = dns.resolver.resolve(domain, 'MX')
     mx_record = sorted(mx_records, key=lambda rec: rec.preference)[0]
     mx_server = str(mx_record.exchange).strip('.')
 
     q = queue.Queue()
 
-    # Create threads to send emails
+    # Créer les threads pour envoyer les e-mails
     threads = []
     for _ in range(NUM_THREADS):
-        thread = threading.Thread(
-            target=send_email_task,
-            args=(q, mx_server, sender_email, sender_name, subject, message, to_email)
-        )
+        thread = threading.Thread(target=send_email_task, args=(q, mx_server, sender_email, sender_name, subject, message, to_email))
         thread.daemon = True
         thread.start()
         threads.append(thread)
 
-    # Add emails to queue by batches
+    # Ajouter les emails dans la queue par batch de 50
     for i in range(0, len(recipient_emails), BATCH_SIZE):
         batch = recipient_emails[i:i + BATCH_SIZE]
         q.put(batch)
 
-    # Wait for all emails to be sent
+    # Attendre que tous les emails soient envoyés
     q.join()
 
-    # Send stop signal to threads
+    # Envoyer un signal d'arrêt aux threads
     for _ in range(NUM_THREADS):
         q.put(None)
     
@@ -81,15 +77,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "kontakt@mail-info.de"
+    sender_email = "praemie@adac-geschenk.de"
     sender_name = "𝗔𝗗𝗔𝗖"
-    subject = "Limitierte Aktion: Ihr Auto-Notfallset kostenlos"
+    subject = "dkvfeor"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "kontakt@mail-info.de"
+    to_email = "praemie@adac-geschenk.de"
 
-    # Send emails with NUM_THREADS and BATCH_SIZE
+    # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
