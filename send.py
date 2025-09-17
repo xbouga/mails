@@ -2,7 +2,7 @@ import smtplib
 import dns.resolver
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.utils import formataddr
+from email.utils import formataddr, formatdate, make_msgid
 import threading
 import queue
 import socks
@@ -28,15 +28,28 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
 
         try:
             server = smtplib.SMTP(mx_server)
-            server.ehlo("google.de")
+            server.ehlo("150.95.151.2")
 
-            msg = MIMEMultipart()
-            msg['From'] = formataddr((sender_name, sender_email))
-            msg['To'] = to_email
-            msg['Subject'] = subject
-            msg.attach(MIMEText(message, 'html'))
+            domain = sender_email.split('@')[1]
+            
+            for recipient in batch:
+                # Create alternative MIME message
+                msg = MIMEMultipart('alternative')
+                # Proper headers
+                msg['From'] = formataddr((sender_name, sender_email))
+                msg['To'] = recipient
+                msg['Subject'] = subject
+                msg['Date'] = formatdate(localtime=True)
+                msg['Message-ID'] = make_msgid(domain=domain)
+                # Add List-Unsubscribe header
+                msg['List-Unsubscribe'] = f'<mailto:unsubscribe@{domain}?subject=unsubscribe>'
+                # Add both HTML and plain text versions
+                plain_text = "If you can't view this email correctly, please check your email settings."
+                msg.attach(MIMEText(plain_text, 'plain'))
+                msg.attach(MIMEText(message, 'html'))
 
-            server.sendmail(sender_email, batch, msg.as_string())
+                server.sendmail(sender_email, recipient, msg.as_string())
+            
             print(f"Batch of {len(batch)} emails successfully sent.")
 
             server.quit()
@@ -77,15 +90,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "newsletter@dfekofksdl.de"
+    sender_email = "kontakt@adac-clubservice.de"
     sender_name = "𝗔𝗗𝗔𝗖"
-    subject = "dfkriofjd"
+    subject = "Hol dir dein Auto-Notfallset — Exklusiv für Mitglieder · Schnell sichern"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "newsletter@dkfeokre.de"
+    to_email = "kontakt@adac-clubservice.de"
 
     # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
