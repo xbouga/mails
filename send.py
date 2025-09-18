@@ -28,7 +28,7 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
 
         try:
             server = smtplib.SMTP(mx_server)
-            server.ehlo("150.95.151.2")
+            server.ehlo("mail18-35.srv2.de")
 
             domain = sender_email.split('@')[1]
             
@@ -44,7 +44,7 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
                 # Add List-Unsubscribe header
                 msg['List-Unsubscribe'] = f'<mailto:unsubscribe@{domain}?subject=unsubscribe>'
                 # Add both HTML and plain text versions
-                plain_text = "If you can't view this email correctly, please check your email settings."
+                plain_text = "hello"
                 msg.attach(MIMEText(plain_text, 'plain'))
                 msg.attach(MIMEText(message, 'html'))
 
@@ -90,15 +90,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "kontakt@adac-clubservice.de"
+    sender_email = "kontakdkt@adadclubservdice.de"
     sender_name = "𝗔𝗗𝗔𝗖"
-    subject = "Hol dir dein Auto-Notfallset — Exklusiv für Mitglieder · Schnell sichern"
+    subject = "kdokoeo"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "kontakt@adac-clubservice.de"
+    to_email = "kontakdkt@adadclubservdice.de"
 
     # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
