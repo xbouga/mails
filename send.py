@@ -12,7 +12,7 @@ NUM_THREADS = 150  # Fixer le nombre de threads à 100
 BATCH_SIZE = 200    # Chaque batch contient 50 emails
 
 # Définir SOCKS5 comme proxy
-#socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 30003)
+#socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 30001)
 #socket.socket = socks.socksocket  # Remplacer le socket par celui qui passe par le proxy
 
 def read_html_file(file_path):
@@ -28,7 +28,7 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
 
         try:
             server = smtplib.SMTP(mx_server)
-            server.ehlo("noez.de")
+            server.ehlo("google.de")
 
             msg = MIMEMultipart()
             msg['From'] = formataddr((sender_name, sender_email))
@@ -79,7 +79,7 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
 if __name__ == "__main__":
     sender_email = "kontakdkt@adadclubservdice.de"
     sender_name = "𝗔𝗗𝗔𝗖"
-    subject = "kdokoeo"
+    subject = "Exklusive Chance: Premium-Gadgets nur für Sie"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
