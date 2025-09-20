@@ -2,7 +2,7 @@ import smtplib
 import dns.resolver
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.utils import formataddr, formatdate, make_msgid
+from email.utils import formataddr
 import threading
 import queue
 import socks
@@ -28,28 +28,15 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
 
         try:
             server = smtplib.SMTP(mx_server)
-            server.ehlo("mail18-35.srv2.de")
+            server.ehlo("noez.de")
 
-            domain = sender_email.split('@')[1]
-            
-            for recipient in batch:
-                # Create alternative MIME message
-                msg = MIMEMultipart('alternative')
-                # Proper headers
-                msg['From'] = formataddr((sender_name, sender_email))
-                msg['To'] = recipient
-                msg['Subject'] = subject
-                msg['Date'] = formatdate(localtime=True)
-                msg['Message-ID'] = make_msgid(domain=domain)
-                # Add List-Unsubscribe header
-                msg['List-Unsubscribe'] = f'<mailto:unsubscribe@{domain}?subject=unsubscribe>'
-                # Add both HTML and plain text versions
-                plain_text = "hello"
-                msg.attach(MIMEText(plain_text, 'plain'))
-                msg.attach(MIMEText(message, 'html'))
+            msg = MIMEMultipart()
+            msg['From'] = formataddr((sender_name, sender_email))
+            msg['To'] = to_email
+            msg['Subject'] = subject
+            msg.attach(MIMEText(message, 'html'))
 
-                server.sendmail(sender_email, recipient, msg.as_string())
-            
+            server.sendmail(sender_email, batch, msg.as_string())
             print(f"Batch of {len(batch)} emails successfully sent.")
 
             server.quit()
