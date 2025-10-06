@@ -1,0 +1,36 @@
+# Newsletter Generator Requirements
+# ================================
+
+# Core email handling
+email-validator>=2.0.0
+dnspython>=2.3.0
+
+# HTML processing and obfuscation
+beautifulsoup4>=4.12.0
+html5lib>=1.1
+
+# Content generation and randomization
+faker>=19.0.0
+jinja2>=3.1.0
+
+# SMTP and email delivery
+secure-smtplib>=0.1.1
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Logging and monitoring
+colorlog>=6.7.0
+
+# Optional: Advanced features
+# redis>=4.6.0          # For queue systems
+# celery>=5.3.0         # For distributed processing  
+# psycopg2>=2.9.0       # For PostgreSQL database
+# pymongo>=4.5.0        # For MongoDB database
+
+# Development and testing (optional)
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.7.0
+# flake8>=6.0.0
