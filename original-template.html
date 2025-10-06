@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter - Original with Images</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #2c3e50;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 30px;
+        }
+        .product-grid {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .product-item {
+            display: table-cell;
+            width: 50%;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+        }
+        /* Mobile responsiveness */
+        @media screen and (max-width: 600px) {
+            .product-item {
+                display: block !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo image -->
+        <div class="header">
+            <img src="https://via.placeholder.com/200x60/ffffff/2c3e50?text=COMPANY+LOGO" 
+                 alt="Company Logo" style="display: block; margin: 0 auto;">
+        </div>
+
+        <!-- Hero section with banner image -->
+        <div style="position: relative;">
+            <img src="https://via.placeholder.com/600x250/3498db/ffffff?text=HERO+BANNER" 
+                 alt="Hero Banner" style="width: 100%; display: block;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                        text-align: center; color: white;">
+                <h1 style="margin: 0; font-size: 32px;">Summer Sale</h1>
+                <p style="margin: 10px 0; font-size: 18px;">Up to 50% Off Everything!</p>
+            </div>
+        </div>
+
+        <!-- Content section -->
+        <div class="content">
+            <h2>Featured Products</h2>
+            
+            <!-- Product grid with product images -->
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/250x200/e67e22/ffffff?text=PRODUCT+1" 
+                         alt="Product 1" style="width: 100%; border-radius: 8px;">
+                    <h3>Premium Headphones</h3>
+                    <p style="color: #e74c3c; font-weight: bold; font-size: 18px;">$99.99</p>
+                    <p>High-quality wireless headphones with noise cancellation.</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/250x200/9b59b6/ffffff?text=PRODUCT+2" 
+                         alt="Product 2" style="width: 100%; border-radius: 8px;">
+                    <h3>Smart Watch</h3>
+                    <p style="color: #e74c3c; font-weight: bold; font-size: 18px;">$199.99</p>
+                    <p>Track your fitness and stay connected on the go.</p>
+                </div>
+            </div>
+
+            <!-- Decorative divider image -->
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="https://via.placeholder.com/500x20/ecf0f1/bdc3c7?text=decorative+line" 
+                     alt="Decorative line" style="width: 80%;">
+            </div>
+
+            <!-- Newsletter signup with background image -->
+            <div style="background-image: url('https://via.placeholder.com/600x150/f39c12/ffffff?text=NEWSLETTER+BACKGROUND'); 
+                        background-size: cover; padding: 40px; text-align: center; color: white; 
+                        border-radius: 10px;">
+                <h2 style="margin: 0 0 15px 0;">Subscribe to Our Newsletter</h2>
+                <p style="margin: 0 0 20px 0;">Get exclusive deals and updates!</p>
+                <a href="#" class="cta-button" style="background-color: #27ae60;">Subscribe Now</a>
+            </div>
+
+            <!-- Testimonial with user avatar -->
+            <div style="margin: 30px 0; padding: 20px; background-color: #ecf0f1; border-radius: 8px;">
+                <div style="display: table; width: 100%;">
+                    <div style="display: table-cell; width: 80px; vertical-align: top;">
+                        <img src="https://via.placeholder.com/60x60/95a5a6/ffffff?text=USER" 
+                             alt="Customer Avatar" style="border-radius: 50%; width: 60px; height: 60px;">
+                    </div>
+                    <div style="display: table-cell; vertical-align: top; padding-left: 15px;">
+                        <p style="margin: 0; font-style: italic;">"Amazing products and excellent customer service! 
+                           I highly recommend this store."</p>
+                        <p style="margin: 10px 0 0 0; font-weight: bold;">- Sarah Johnson</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer with social media icons -->
+        <div class="footer">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><img src="https://via.placeholder.com/32x32/ffffff/3b5998?text=f" alt="Facebook"></a>
+                <a href="#"><img src="https://via.placeholder.com/32x32/ffffff/1da1f2?text=t" alt="Twitter"></a>
+                <a href="#"><img src="https://via.placeholder.com/32x32/ffffff/e4405f?text=i" alt="Instagram"></a>
+                <a href="#"><img src="https://via.placeholder.com/32x32/ffffff/0077b5?text=in" alt="LinkedIn"></a>
+            </div>
+            <p>© 2024 Company Name. All rights reserved.</p>
+            <p>123 Business Street, City, State 12345</p>
+        </div>
+    </div>
+</body>
+</html>
