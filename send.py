@@ -79,7 +79,7 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
 if __name__ == "__main__":
     sender_email = "kontakdkt@tkservdicegermany.de"
     sender_name = "𝗧𝗘𝗖𝗛𝗡𝗜𝗞𝗘𝗥 𝗞𝗥𝗔𝗡𝗞𝗘𝗡𝗞𝗔𝗦𝗦𝗘"
-    subject = "Kostenlos testen: Das neue Medicare Kit für Sie bereit!"
+    subject = "Nur für kurze Zeit: Gratis Medicare Test-Kit anfordern!"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
