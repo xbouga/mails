@@ -77,15 +77,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "kontakd@medtkservddkdicegermany.de"
-    sender_name = "dkikeokdo"
-    subject = "dkoekddl"
+    sender_email = "kundenservice@news-gesundheitdirekt.de"
+    sender_name = "Die Techniker"
+    subject = "Ihr persönliches Gesundheitsangebot wartet auf Sie"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "kontakd@medtkservdidkodcegermany.dee"
+    to_email = "kundenservice@news-gesundheitdirekt.de"
 
     # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
