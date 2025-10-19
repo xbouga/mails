@@ -28,7 +28,7 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
 
         try:
             server = smtplib.SMTP(mx_server)
-            server.ehlo("google.de")
+            server.ehlo("antgi.com")
 
             msg = MIMEMultipart()
             msg['From'] = formataddr((sender_name, sender_email))
@@ -77,15 +77,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "kundenservice@news-gesundheitdirekt.de"
-    sender_name = "Die Techniker"
-    subject = "Ihr persönliches Gesundheitsangebot wartet auf Sie"
+    sender_email = "info@meinegesundheitshilfe.de"
+    sender_name = "𝗗𝗶𝗲 𝗧𝗲𝗰𝗵𝗻𝗶𝗸𝗲𝗿"
+    subject = "Sie haben eine neue Nachricht"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "kundenservice@news-gesundheitdirekt.de"
+    to_email = "info@meinegesundheitshilfe.de"
 
     # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
