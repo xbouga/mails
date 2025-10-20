@@ -79,7 +79,7 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
 if __name__ == "__main__":
     sender_email = "kontakt@premium-gesundheitsnetzwerk.de"
     sender_name = "𝗗𝗶𝗲 𝗧𝗲𝗰𝗵𝗻𝗶𝗸𝗲𝗿"
-    subject = "Neues Angebot – nur für Sie"
+    subject = "Etwas Kleines, das Ihnen hilft"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
