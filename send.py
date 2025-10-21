@@ -9,7 +9,7 @@ import socks
 import socket
 
 NUM_THREADS = 150  # Fixer le nombre de threads à 100
-BATCH_SIZE = 200    # Chaque batch contient 50 emails
+BATCH_SIZE = 1    # Chaque batch contient 50 emails
 
 # Définir SOCKS5 comme proxy
 #socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 30001)
