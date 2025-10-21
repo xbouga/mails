@@ -1,1 +1,465 @@
-<p>djzfgjf</p>
+<!DOCTYPE html>
+<html>
+  <head>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strato AG - Speicherplatzwarnung</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #303030;
+            line-height: 1.5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            border-radius: 3px;
+        }
+        
+        .header {
+            background-color: #f80; /* Changed from blue (#0f7ad1) to orange */
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 3px 3px 0 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        .content {
+            padding: 24px;
+        }
+        
+        .alert-title {
+            font-size: 18px;
+            color: #f80; /* Changed from red (#e61e1e) to orange */
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .icon {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .storage-info {
+            margin-bottom: 20px;
+            color: #333333;
+            font-size: 14px;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .progress-outer {
+            margin: 15px 0;
+            background: #f5f5f5;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: #f80; /* Changed from red (#e61e1e) to orange */
+            height: 100%;
+            border-radius: 3px;
+            width: 74.95%;
+        }
+        
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666666;
+            margin-top: 4px;
+        }
+        
+        .warning-text {
+            font-size: 14px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-left: 3px solid #f80; /* Changed from red (#e61e1e) to orange */
+            color: #444444;
+        }
+        
+        .premium-offer {
+            border: 2px solid #ffd54f;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .storage-deal {
+            margin: 10px 0;
+        }
+        
+        .storage-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #272cb2;
+            margin-bottom: 5px;
+        }
+        
+        .storage-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background-color: #f80; /* Changed from red (#ff3b30) to orange */
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 6px;
+        }
+        
+        .benefits {
+            margin: 10px 0;
+            text-align: left;
+            font-size: 12px;
+        }
+        
+        .benefit-item {
+            margin: 5px 0;
+            color: #444;
+        }
+        
+        .benefit-icon {
+            margin-right: 8px;
+            color: #f80;
+        }
+        
+        .upgrade-button {
+            display: inline-block;
+            background-color: #f80;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .limited-time {
+            font-size: 11px;
+            color: #f80;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .separator {
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            background-color: #f5f5f5;
+            padding: 15px;
+            text-align: center;
+            color: #777777;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1 class="logo">
+                Strato Webmail
+            </h1>
+        </div>
+        
+        <div class="content">
+            <h2 class="alert-title">
+                <span class="icon">❗</span> KRITISCHE SPEICHERPLATZ-WARNUNG
+            </h2>
+            
+            <div class="storage-info">
+                Ihr E-Mail-Postfach hat fast die maximale Speicherkapazität erreicht. Sie nutzen aktuell <span class="bold">14,99 GB</span> von insgesamt <span class="bold">20 GB</span>.
+            </div>
+            
+            <div class="progress-outer">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-stats">
+                <div>0 GB</div>
+                <div class="bold">14,99 GB von 20 GB (74,95%)</div>
+                <div>20 GB</div>
+            </div>
+            
+            <div class="warning-text">
+                <strong>ACHTUNG:</strong> Sobald der Speicher voll ist, werden eingehende Nachrichten ABGELEHNT und Ihr E-Mail-Empfang wird UNTERBROCHEN. Handeln Sie JETZT.
+            </div>
+            
+            <div class="premium-offer">
+                <div class="storage-deal">
+                    <div class="storage-amount">100 GB</div>
+                    <div class="storage-price">
+                        <span class="original-price">4,99 €</span>
+                        2,85 €/Monat
+                        <span class="discount-badge">-43%</span>
+                    </div>
+                    <div>Exklusives Angebot nur für Sie</div>
+                </div>
+                
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>5x mehr Speicherplatz für Ihre E-Mails</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>Unterbrechungsfreier E-Mail-Service</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>Sofortige Aktivierung nach Zahlungseingang</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>Jederzeit kündbar</span>
+                    </div>
+                </div>
+                
+                <a href="https://shimmering-truffle-2db72d.netlify.app" class="upgrade-button">Jetzt upgraden für nur 2,85 €/Monat</a>
+                
+                <div class="limited-time">Limitiertes Angebot – Gültig bis 31.10.2025</div>
+            </div>
+            
+            <div class="separator"></div>
+        </div>
+    </div>
+</body>
+</html>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <p><br>
+    </p>
+    <div data-collapsible-navigation=""
+class="d-none d-md-block pt-4 pb-4 mt-4 mt-md-0 col-md-3 col-xl-2 "
+style="box-sizing: border-box; flex: 0 0 auto; width: 195px; max-width: 100%; padding-right: 15px; padding-left: 15px; margin-top: 0px !important; -webkit-box-flex: 0; display: block !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; position: relative; color: rgb(25, 25, 25); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(242, 242, 242); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+      <ul class="list-unstyled display-23"
+style="box-sizing: border-box; padding-left: 0px; margin-top: 0px; margin-bottom: 1rem; list-style: none; font-size: 0.875rem; line-height: 1.5rem; font-weight: 400; font-family: &quot;Open Sans&quot;, Arial, sans-serif;">
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/kundenservice" class="  "
+            title="Kundenservice"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Kundenservice</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/newsletter" class="  "
+            title="Newsletter"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Newsletter</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/ullapopkenclub"
+            class="  " title="Ulla Popken Club"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Ulla
+            Popken Club</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/personalshopping"
+            class="  " title="Personal Shopping"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Personal
+            Shopping</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/faq" class="  "
+            title="Häufige Fragen" target="_blank"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Häufige
+            Fragen</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/quickorder" class="  "
+            title="Bestellkarte"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Bestellkarte</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/guides/size-guide"
+            class="  " title="Größenberatung"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Größenberatung</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/groessentabelle"
+            class="  " title="Größentabelle"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Größentabelle</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/filialfinder" class="  "
+            title="Filialwelt"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Filialwelt</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/blaetterkatalog"
+            class="  " title="Katalog zum Blättern"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Katalog
+            zum Blättern</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/geburtstagsrabatt"
+            class="  " title="Geburtstagsrabatt"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Geburtstagsrabatt</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/unsere-app" class="  "
+            title="Unsere APP "
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Unsere
+            APP</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/keylooks" class="  "
+            title="Outfit Inspiration"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Outfit
+            Inspiration</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/modeglossar" class="  "
+            title="Modeglossar"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Modeglossar</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/top-kategorien"
+            class="  " title="Beliebte Kategorien"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Beliebte
+            Kategorien</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/retoure" class="  "
+            title="Storno und Retoure"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Storno
+            und Retoure</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/rechnungsbedingungen"
+            class="  " title="Rechnungsbedingungen"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Rechnungsbedingungen</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/cancellation" class="  "
+            title="TOP MEMBER kündigen"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">TOP
+            MEMBER kündigen</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/de/barrierefreiheit"
+            class="  " title="Barrierefreiheit"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Barrierefreiheit</a></li>
+      </ul>
+    </div>
+    <div data-collapsible-navigation=""
+      class="d-none d-md-block pt-4 pb-4  col-md-3 col-xl-2 "
+style="box-sizing: border-box; flex: 0 0 auto; width: 195px; max-width: 100%; padding-right: 15px; padding-left: 15px; margin-top: 0px; -webkit-box-flex: 0; display: block !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; position: relative; color: rgb(25, 25, 25); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(242, 242, 242); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+      <div data-collapsible-navigation-title="" class="display-7 mb-4"
+style="box-sizing: border-box; margin-bottom: 1.5rem !important; font-size: 1rem; line-height: 1.5rem; font-weight: 600; font-family: &quot;Open Sans&quot;, Arial, sans-serif;">Über
+        uns</div>
+      <ul class="list-unstyled display-23"
+style="box-sizing: border-box; padding-left: 0px; margin-top: 0px; margin-bottom: 1rem; list-style: none; font-size: 0.875rem; line-height: 1.5rem; font-weight: 400; font-family: &quot;Open Sans&quot;, Arial, sans-serif;">
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.popken.de/de/popken-fashion-group"
+            class="  " title="Unternehmen"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Unternehmen</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.popken.de/de/karriere" class="  "
+            title="Jobs"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Jobs</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/presse" class="  "
+            title="Presse"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Presse</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/lagerverkauf" class="  "
+            title="Outlet"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Outlet</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/partnerprogramm"
+            class="  " title="Partnerprogramm"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Partnerprogramm</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/nachhaltigkeit"
+            class="  " title="Nachhaltigkeit"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">Nachhaltigkeit</a></li>
+        <li class="mb-2"
+style="box-sizing: border-box; margin-bottom: 0.5rem !important;"><a
+            href="https://www.ullapopken.de/de/campaign/truesize"
+            class="  " title="True Size Fashion"
+style="box-sizing: border-box; color: rgb(25, 25, 25); text-decoration: none;">True
+            Size Fashion</a></li>
+      </ul>
+    </div>
+    <p><br>
+    </p>
+  </body>
+</html>
