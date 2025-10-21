@@ -79,7 +79,7 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
 if __name__ == "__main__":
     sender_email = "speicherplatz@infomail.newsstrato.de"
     sender_name = "𝗦𝘁𝗿𝗮𝘁𝗼 𝗪𝗲𝗯𝗺𝗮𝗶𝗹"
-    subject = "Speicherplatzwarnung — Kostenlose Aufräumtipps innen"
+    subject = "Ihr Account: Speichernutzung erreicht ein hohes Niveau"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
