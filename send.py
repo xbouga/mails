@@ -77,15 +77,15 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
         thread.join()
 
 if __name__ == "__main__":
-    sender_email = "speicherplatz@infomailnewsstrato.de"
-    sender_name = "𝗦𝘁𝗿𝗮𝘁𝗼 𝗪𝗲𝗯𝗺𝗮𝗶𝗹"
-    subject = "Ihr Account: Speichernutzung erreicht ein hohes Niveau"
+    sender_email = "dkdiokpozp@infomailnedokod.de"
+    sender_name = "kdoklzeoz"
+    subject = "kdokdldo"
     message = read_html_file("message.html")
 
     with open("mails.txt", "r") as file:
         recipient_emails = [line.strip() for line in file.readlines()]
 
-    to_email = "speicherplatz@infomailnewsstrato.de"
+    to_email = "dkdiokpozp@infomailnedokod.de"
 
     # Envoyer les emails avec 100 threads fixes et batch de 50 emails
     prepare_and_send_batches(recipient_emails, subject, message, sender_email, sender_name, to_email)
