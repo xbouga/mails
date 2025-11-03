@@ -65,7 +65,7 @@ def read_emails_file(file_path):
     if not validate_file_exists(file_path):
         sys.exit(1)
     try:
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding="utf-8") as file:
             emails = [line.strip() for line in file.readlines() if line.strip()]
         
         # Validate emails
@@ -105,7 +105,7 @@ def confirm_send(num_emails, sender_email):
     response = input(f"{Fore.YELLOW}Do you want to proceed? (yes/no): {Style.RESET_ALL}").strip().lower()
     return response in ['yes', 'y']
 
-def send_email_task(q, mx_server, sender_email, sender_name, subject, message, to_email, verbose=False):
+def send_email_task(q, mx_server, smtp_port, sender_email, sender_name, subject, message, to_email, verbose=False):
     global total_sent, total_failed, progress_bar
     
     while True:
@@ -114,7 +114,7 @@ def send_email_task(q, mx_server, sender_email, sender_name, subject, message, t
             break  # Arrêter le thread quand on reçoit "None"
 
         try:
-            server = smtplib.SMTP(mx_server)
+            server = smtplib.SMTP(mx_server, smtp_port)
             server.ehlo("antgi.com")
 
             msg = MIMEMultipart()
@@ -168,7 +168,7 @@ def prepare_and_send_batches(recipient_emails, subject, message, sender_email, s
     # Créer les threads pour envoyer les e-mails
     threads = []
     for _ in range(num_threads):
-        thread = threading.Thread(target=send_email_task, args=(q, mx_server, sender_email, sender_name, subject, message, to_email, verbose))
+        thread = threading.Thread(target=send_email_task, args=(q, mx_server, smtp_port, sender_email, sender_name, subject, message, to_email, verbose))
         thread.daemon = True
         thread.start()
         threads.append(thread)
